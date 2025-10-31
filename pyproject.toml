@@ -166,6 +166,10 @@ filterwarnings = [
 
     # raised by flask-sqlalchemy https://github.com/pallets-eco/flask-sqlalchemy/issues/137
     "ignore:Exception ignored in.*sqlite3.Connection:pytest.PytestUnraisableExceptionWarning",
+
+    # static file responses served during tests may leave file handles unclosed on newer Python versions
+    "ignore:Exception ignored in.*_io.FileIO.*:pytest.PytestUnraisableExceptionWarning",
+    "ignore:unclosed file:ResourceWarning",
 ]
 
 [tool.coverage.run]
