@@ -327,6 +327,7 @@ def get_visibility(app, admin):
 
     rv = client.get("/admin/mockview/")
     assert "TestMenuItem" not in rv.data.decode("utf-8")
+    rv.close()
 
 
 def test_submenu(admin):
